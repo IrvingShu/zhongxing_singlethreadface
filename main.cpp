@@ -90,7 +90,12 @@ int main(int argc, char** argv)
 
     //face recognization
     string imgName;
-    int N = 20;
+    if(argc == 1){
+        std::cout << "Enter N picture" << std::endl;
+        return 0;
+
+    }
+    int N = atoi(argv[1]);
 
     FaceDetector faceDetector(shape_predictor_model);
     Classifier classifier(model_file, trained_file);
